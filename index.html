@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--FONT LINK-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <title>G A J E N D H I R A N </title>
+
+    <style>
+
+      *{  padding:0;
+        margin:0;
+        box-sizing: border-box;}
+    body{
+      
+        font-family: 'Montserrat', sans-serif;
+    }
+    .header{
+  height: 100px;
+  padding: 0 20px;
+  color: #000;
+}
+.logo{
+  line-height: 100px;
+  float: left;
+  text-transform: uppercase;
+}
+
+.menu{
+  float: right;
+  line-height: 100px;
+}
+.menu a{
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: 0.4s;
+  font-weight: 900;
+}
+.show-menu-btn,.hide-menu-btn{
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+.show-menu-btn{
+  float: right;
+}
+.show-menu-btn i{
+  line-height: 100px;
+}
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+  color: #580096;
+}
+
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+.content{
+  padding: 0 20px;
+}
+.content img{
+  width: 100%;
+  max-width: 700px;
+  margin: 20px 0;
+}
+.content p{
+  text-align: justify;
+}
+
+@media screen and (max-width:800px) {
+  .show-menu-btn,.hide-menu-btn{
+    display: block;
+  }
+  .menu{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: url("https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+    z-index:1000;
+    color:aliceblue;
+  }
+  .menu a{
+    display: block;
+    padding: 20px;
+    color:#fff;
+  }
+  .hide-menu-btn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  #chk:checked ~ .menu{
+    right: 0;
+  }
+}
+    html{
+      scroll-behavior: smooth;
+    }
+   
+    .card-one{
+      height:350px;
+      width:270px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin:0;
+      padding:0;  
+    }
+    .cards{
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: flex-start;
+    }
+     /* img:hover{
+      transform: scale(1.2);
+      transform: rotate(30deg);
+    } */
+     
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+   .inner-container{
+     height:250px;
+     width:270px;
+   }
+   .outer-container{
+     height:100px;
+     width:270px;
+   }
+   img{
+     object-fit:cover;
+   }
+   h3{
+     font-size:17px;
+     text-align: center;
+   }
+   .sizing{
+     margin:10px auto;
+   }
+   li{
+     list-style-type: none;
+   }
+  .icon-select{
+     display:flex;
+     flex-direction: column;
+     position: absolute;
+    margin-top:-240px;
+    margin-left:210px;
+  }
+   .fa-heart{
+     font-size: 30px;
+     color:#f50008;
+     background-color: #f78387;
+     height:45px;
+     width:45px;
+     border-radius: 50%;
+     padding-left:7px;
+     padding-top: 8px;
+   }
+   .shopping{
+    font-size: 25px;
+     color:#580096;
+     background-color: #b96cf0;
+     height:45px;
+     width:45px;
+     border-radius: 50%;
+     padding-left:7px;
+     padding-top: 9px;
+     display: none;
+     transition: cubic-bezier(0.86, 0, 0.07, 1);
+    
+   }
+   .card-one:hover .shopping{
+     display: block;
+   }
+   .active{
+     display: block;
+   }
+   h2{
+     text-align: center;
+     text-transform: uppercase;
+   }
+   hr{
+     height:2px;
+     width:100px;
+margin:0 auto ;
+   background-color: #580096;
+    border:none;
+   }
+ 
+   .cart-button  {
+  background-color: #580096;
+  color:white;
+  border:none;
+  box-shadow: none;
+  height:40px;
+  width:150px;
+  font-weight: 900;
+  margin-left:50px;
+  cursor:pointer;
+}
+button :hover{
+  background-color: #8716de;
+}
+.icon-select{
+  cursor: pointer;
+}
+.content{
+  display: flex;
+}
+.popup{
+  height:50px;
+  width:200px;
+  background-color: #580096;
+  color:white;
+  padding:5px;
+  display: none;
+}
+p{
+  margin-top:-46px;
+  margin-left:2px;
+  color:#000;
+  font-weight: 900;
+  text-align: center;
+}
+
+.selction{
+  display: flex;
+}
+.main-content{
+  height:90vh;
+  width:100%;
+  background:url("https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat;
+}
+
+.box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.box-one{
+  border:1px solid rgb(212, 211, 209) ;
+  height:300px;
+  width:400px;
+  background-position: center;
+}
+.box-two{
+  border:1px solid rgb(212, 211, 209);
+  height:300px;
+  width:400px;
+}
+.box-three{
+  border:1px solid rgb(212, 211, 209);
+  height:300px;
+  width:400px;
+}
+.spacing
+{
+  margin:2px auto;
+}
+#icon-one{
+transform: translateX(180px);
+margin-top:70px;}
+
+.bold{
+  color:#000;
+  font-weight:900;
+  font-size: 20px;
+  z-index: 1000;
+  margin-top:50px;
+  opacity:initial;
+}
+
+.contents{
+display:flex;
+flex-wrap: wrap;
+font-size: 16px;
+padding:10px 10px;
+background-color: #000;
+color:white;}
+.info-one li{
+  padding:10px ;
+}
+.info-two li{
+  padding:10px ;
+}
+.info-three li{
+  padding:10px ;
+}
+.info-four li{
+  padding:10px ;
+}
+.info-five li{
+  padding:10px ;
+}
+.gap{
+  margin:15px auto;
+}
+.end{
+  color:black;
+}
+.group-icons{
+  margin-left: 27px;
+  margin-right: 27px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+    </style>
+  
+</head>
+<body>
+ 
+
+<!--navigation bar-->
+<div class="main-content">
+<div class="header">
+  <h3 class="logo">Foodies Corner</h3>
+  <input type="checkbox" id="chk">
+  <label for="chk" class="show-menu-btn">
+    <i class="fas fa-bars"></i>
+  </label>
+
+  <ul class="menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Cart</a>
+    <a href="#">Offers</a>
+    <a href="#">Contact</a>
+    <label for="chk" class="hide-menu-btn">
+      <i class="fas fa-times"></i>
+    </label>
+  </ul>
+</div>
+
+
+
+
+
+ 
+
+<!-- 
+
+<h1>Our Special Menu</h1>
+<ul class="selection">
+  <li><button>All</button></li>
+  <li><button>Non-veg</button></li>
+  <li><button>Veg</button></li>
+  <li><button>Others</button></li>
+  <li><button>Cakes</button></li>
+</ul>
+<br><br><br> -->
+</div><br>
+<br>
+
+
+
+
+  <h2>Non -vegetarian foods</h2><br><br>
+    <div class="container">
+      <div class="cards">
+        <div class="card-one sizing">
+          <div class="inner-container">
+            <img src="./assets/images/1.jpeg" alt="" height="250" width="270">
+            <ul class="icon-select">
+              <li><i class="fas fa-heart"></i></li>&nbsp;
+              <li><i class="fas fa-shopping-cart shopping"></i></li>
+            </ul>
+            <!-- <p>Parotta chickens with spicy masala's</p> -->
+          </div>
+          <div class="outer-container">
+            <br>
+            <h3>Parotta Chicken</h3>  
+            <br>
+           <button class="cart-button" >Buy Now</button >
+          </div>
+        </div>
+
+        <div class="card-one sizing">
+          <div class="inner-container">
+            <img src="./assets/images/soup.jpeg" alt="" height="250" width="270">
+            <ul class="icon-select">
+              <li><i class="fas fa-heart"></i></li>&nbsp;
+              <li><i class="fas fa-shopping-cart shopping"></i></li>
+            </ul>
+            <!-- <p>Fresh prawn fry with spicy masala's</p> -->
+          </div>
+          <div class="outer-container">
+            <br>
+            <h3>Prawn fry</h3><br>
+           <button class="cart-button"  >Buy Now</button class="cart-button"  >
+          </div>
+        </div>
+
+        <div class="card-one sizing">
+          <div class="inner-container">
+            <img src="./assets/images/egg.jpeg" alt="" height="250" width="270">
+            <ul class="icon-select">
+              <li><i class="fas fa-heart"></i></li>&nbsp;
+              <li><i class="fas fa-shopping-cart shopping"></i></li>
+            </ul>
+            <!-- <p>Egg chicken fry with butter masala</p> -->
+          </div>
+          <div class="outer-container">
+            <br>
+            <h3>Egg chicken fry</h3><br>
+           <button class="cart-button" >Buy Now</button >
+          </div>
+        </div>
+
+        <div class="card-one sizing">
+          <div class="inner-container">
+            <img src="./assets/images/nonveg.jpeg" alt="" height="250" width="270">
+            <ul class="icon-select">
+              <li><i class="fas fa-heart"></i></li>&nbsp;
+              <li><i class="fas fa-shopping-cart shopping"></i></li>
+            </ul>
+            <!-- <p>Potato fry with chicken fry with spices</p> -->
+          </div>
+          <div class="outer-container">
+            <br>
+            <h3>Potato fry chicken masala</h3><br>
+           <button class="cart-button" >Buy Now</button >
+          </div>
+        </div>
+      </div>
+    </div><br><br>
+
+
+
+    
+    <h2>Vegetarian foods</h2><br><br>
+      <div class="container">
+        <div class="cards">
+          <div class="card-one sizing">
+            <div class="inner-container">
+              <img src="./assets/images/veg1.jpeg" alt="" height="250" width="270">
+              <ul class="icon-select">
+                <li><i class="fas fa-heart"></i></li>&nbsp;
+                <li><i class="fas fa-shopping-cart shopping"></i></li>
+              </ul>
+              <!-- <p>Potato chips with best crunch pro</p> -->
+            </div>
+            <div class="outer-container">
+              <br>
+              <h3>French Fries</h3> <br> 
+             <button class="cart-button" >Buy Now</button >
+            </div>
+          </div>
+  
+          <div class="card-one sizing">
+            <div class="inner-container">
+              <img src="./assets/images/veg2.jpeg" alt="" height="250" width="270">
+              <ul class="icon-select">
+                <li><i class="fas fa-heart"></i></li>&nbsp;
+                <li><i class="fas fa-shopping-cart shopping"></i></li>
+              </ul>
+              <!-- <p>Potato oily fry with ginger species</p> -->
+            </div>
+            <div class="outer-container">
+              <br>
+              <h3>Potato fry</h3><br>
+             <button class="cart-button" >Buy Now</button >
+            </div>
+          </div>
+  
+          <div class="card-one sizing">
+            <div class="inner-container">
+              <img src="./assets/images/veg3.jpeg" alt="" height="250" width="270">
+              <ul class="icon-select">
+                <li><i class="fas fa-heart"></i></li>&nbsp;
+                <li><i class="fas fa-shopping-cart shopping"></i></li>
+              </ul>
+              <!-- <p>Potato fry with chicken fry with spices</p> -->
+            </div>
+            <div class="outer-container">
+              <br>
+              <h3>Pasta Fry</h3><br>
+             <button class="cart-button" >Buy Now</button >
+            </div>
+          </div>
+  
+          <div class="card-one sizing">
+            <div class="inner-container">
+              <img src="./assets/images/veg4.jpeg" alt="" height="250" width="270">
+              <ul class="icon-select">
+                <li><i class="fas fa-heart"></i></li>&nbsp;
+                <li><i class="fas fa-shopping-cart shopping"></i></li>
+              </ul>
+              <!-- <p>South-Indian special of idly with sambar</p> -->
+            </div>
+            <div class="outer-container">
+              <br>
+              <h3>Idly Sambar</h3><br>
+             <button class="cart-button"  >Buy Now</button >
+            </div>
+          </div>
+        </div>
+      </div><br><br>
+  
+  
+
+
+      
+      <h2>Other foods </h2><br><br>
+        <div class="container">
+          <div class="cards">
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/juice1.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Fresh lemon juice</p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3>Lemon juice</h3>  <br>
+               <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+    
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/food2.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Donut cake with chocolate </p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3>Donut</h3><br>
+               <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+    
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/food3.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Crunchy gems chocolate</p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3>Chocolates</h3><br>
+               <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+    
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/food4.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Fresh cooly Icecreams</p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3>Ice Creams</h3><br>
+               <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+
+
+        
+      
+      <h2>Cakes and Candy</h2><br><br>
+        <div class="container">
+          <div class="cards">
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/cake1.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Fresh chocolate cake</p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3> Chocolate Cake</h3>  <br>
+               <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+    
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/cake2.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Candy cake with candies</p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3>Candy cake</h3><br>
+               <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+    
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/cake3.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Fresh black forest cake</p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3>Black Forest  </h3>
+                <br>
+               <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+    
+            <div class="card-one sizing">
+              <div class="inner-container">
+                <img src="./assets/images/cake4.jpeg" alt="" height="250" width="270">
+                <ul class="icon-select">
+                  <li><i class="fas fa-heart"></i></li>&nbsp;
+                  <li><i class="fas fa-shopping-cart shopping"></i></li>
+                </ul>
+                <!-- <p>Choco cake with ice creams</p> -->
+              </div>
+              <div class="outer-container">
+                <br>
+                <h3>choco cake</h3><br>
+                <button class="cart-button" >Buy Now</button >
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br><br>
+        <h2>our services</h2><br><br>
+<div class="group-icons">
+  <img src="https://codeless.co/picante/pizza/wp-content/uploads/2019/04/pc4.jpg" alt="">
+  <img src="https://codeless.co/picante/pizza/wp-content/uploads/2019/04/pc3.jpg" alt="">
+  <img src="https://codeless.co/picante/pizza/wp-content/uploads/2019/04/pc2.jpg" alt="">
+  <img src="https://codeless.co/picante/pizza/wp-content/uploads/2019/04/pc1.jpg" alt="">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+      
+<!--footer blog-->
+<h2>  Contents</h2><br><br>
+<div class="contents">
+
+  <div class="block-one gap">
+    <ul class="info-one">
+      <li>MORE</li>
+      <li>Our blog</li>
+      <li>Services</li>
+      <li>Contact us</li>
+      <li>More info</li>
+    </ul>
+  </div>
+  <div class="block-two gap">
+    <ul class="info-two">
+      <li>PLACES</li>
+      <li>Perundurai</li>
+      <li>Erode</li>
+      <li>Salem</li>
+      <li>Chennai</li>
+      <li>Coimbatore</li>
+      <li>Bhavani</li>
+      <li>Madurai</li>
+    </ul>
+  </div>
+  <div class="block-three gap">
+    <ul class="info-three">
+      <li>FOOD ITEMS</li>
+      <li>Beverages</li>
+      <li>Non-vegetarian</li>
+      <li>Vegetarian</li>
+      <li>Cakes</li>
+      <li>Chocolates</li>
+    </ul>
+  </div>
+  <div class="block-four gap">
+    <ul class="info-four">
+      <li>ASSURANCE</li>
+      <li>ISO certified</li>
+      <li>Better quality</li>
+      <li>Good experience</li>
+    </ul>
+  </div>
+  <div class="block-five gap">
+    <ul class="info-five">
+      <li>OTHERS</li>
+      <li>foods</li>
+      <li>Restaurants</li>
+      <li>Blogs</li>
+      <li></li>
+    </ul>
+    
+  </div><br><br><br><br><br><br><br><br><br>
+  <div class="contact">
+      <!-- <input type="text" placeholder="Entert the name"> -->
+  </div>
+</div><br><br><br>
+
+
+<div class="footer">
+  <p class="end"><i class="far fa-copyright"></i>&nbsp;&nbsp;Made by <a href="https://gajendhiranm.github.io">GAJENDHIRAN M</a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+        <script>
+          let card = document.querySelectorAll('.card-one');
+          let shopping = document.querySelectorAll('.shopping');
+          let text = document.querySelectorAll('.inner-container p');
+          for(let i=0;i<card.length;i++){
+           card[i].addEventListener('mouseenter',function(){
+              shopping[i].classList.add('active');
+              text[i].classList.add('active');
+
+           });
+           card[i].addEventListener('mouseout',function(){
+              shopping[i].classList.remove('active');
+              text[i].classList.remove('active');
+
+           })
+          
+          }
+
+ const button  = document.querySelector("button ");
+ const popup = document.querySelector(".popup");
+for(i=0;i<document.querySelectorAll("button ").length;i++){
+  document.querySelectorAll("button ")[i].addEventListener("click",()=>{
+     scrollTo(0,0);
+     popup.style.display="block";
+  },3000)
+} -->
+
+<!-- // const cartIcon =document.querySelector(".icon-select .shopping");
+// const title = document.querySelector(".inner-container p");
+// // const card = document.querySelectorAll(".card-one");
+// // console.log(card);
+// // card.forEach((cards) => {
+// //   cards.addEventListener("mouseover",()=>{
+// //     console.log(card.indexOf);
+// //   })
+// // })
+// for(i=0;i<document.querySelectorAll(".card-one").length;i++){
+//         document.querySelectorAll(".card-one")[i].addEventListener("mouseover",()=>{
+//           cartIcon.style.display="block";
+//       title.style.display="block";
+//       i++;
+//         });
+// } -->
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>
